@@ -1,8 +1,33 @@
-/*Headetr to be filled in later */
+/*
+Developer Name: Christopher Short
+Class: EE 329 Microcontroller-Based Systems Design
+Professor: John Penvenne
+Assignment: Project 1 Function Generator
+Device: Morro x9 Waveform Generator
+Date: 10/30/2022
+Peripherals: MCP4921 DAC, Newhaven Display 0216HZ-FSW-FBW-33V3C 2x16 LCD, and a SparkFun COM-14662 passive 3x4 keypad
+Development Board: STM32L4A6ZGT6U
 
+Overview: This code interfaces a 12-bit DAC, a 3x4 passive keypad, a 2x16 LCD and the STM32L4A6ZGT6U to create a function generator capable of producing sine, tri, and square waveforms as selected by the user. Each waveform is capable of a frequency of 100 Hz, 200 Hz, 300 Hz, 400 Hz, and 500 Hz. Additionally, the duty cycle of the square wave is adjustable between 10% and 90% in steps of 10%. The program defaults with a 100 Hz square wave with a 50% duty cycle upon power up. 
 
+Keypad function map:
+1: Set frequency to 100 Hz
+2: Set frequency to 200 Hz
+3: Set frequency to 300 Hz
+4: Set frequency to 400 Hz
+5: Set frequency to 500 Hz
+6: Output Sine wave
+7: Output Triangle wave
+8: Output Square wave
+9: Reset to default square wave
+*:Decrease duty cycle be 10%
+0:Reset duty cycle to 50%
+#:Increase duty cycle by 10%
+ */
+/************************************************************************/
 
 //Include necessary header files and libraries
+
 #include "main.h"
 #include "Keypad.h"
 #include "Timer.h"
